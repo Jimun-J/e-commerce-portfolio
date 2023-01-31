@@ -1,0 +1,18 @@
+.notification-container {
+    width: 100%;
+    background-color: #6B635A;
+    height: 42px;
+    color: #EFECEC;
+}
+
+.notification {
+    position: relative;
+    max-width: 1660px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+}

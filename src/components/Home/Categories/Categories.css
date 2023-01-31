@@ -1,0 +1,37 @@
+.categories {
+    max-width: 1660px;
+    margin: 0 auto;
+    height: 520px;
+    padding: 40px 40px;
+}
+
+.categories-title {
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.categories-title a {
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(25%);
+    transition: all .3s ease;
+}
+
+.categories-arrow {
+    opacity: 0;
+    margin-left: 10px;
+    transform: translate(-50%, 5px);
+    transition: all .3s ease;
+}
+
+.categories-title a:hover {
+    transform: translate(-25%);
+}
+
+.categories-title a:hover span {
+    opacity: 1;
+    transform: translate(50%, 5px);
+}
