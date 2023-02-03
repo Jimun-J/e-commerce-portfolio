@@ -1,18 +1,14 @@
+export const gql = String.raw;
 
-export async function fetchData() {
-    const response = await fetch('https://jj-multi-shop.myshopify.com/api/2023-01/graphql.json', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/graphql',
-            'X-Shopify-Storefront-Access-Token': process.env.REACT_APP_ACCESS_TOKEN,
-        },
-        body: `{
-          shop {
-            name
-          }
-        }`
-    })
-    const { data } = await response.json();
-    console.log(data);
-    return data;
+export const sendRequest = async (query) => {
+  const response = await fetch(process.env.REACT_APP_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/graphql',
+      'X-Shopify-Storefront-Access-Token': process.env.REACT_APP_ACCESS_TOKEN
+    },
+    body: query
+  })
+  const { data } = await response.json();
+  return data;
 }

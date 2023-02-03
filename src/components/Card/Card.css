@@ -1,0 +1,92 @@
+.card {
+    width: 100%;
+    height: 400px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.card:hover.card img {
+    transform: scale(1.1);
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card .text-wrap {
+    padding: 12px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.color-variant-container {
+    margin-top: 16px;
+    width: 26px;
+    height: 26px;
+    border: 1px solid rgb(107, 107, 107);
+    border-radius: 50%;
+    display: inline-flex;
+    position: relative;
+    margin-right: 4px;
+}
+
+.color-variant {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.sale {
+    display: flex;
+    margin-top: 6px;
+    font-size: 1.1em;
+}
+
+.original-price {
+    margin-right: 12px;
+    text-decoration: line-through;
+}
+
+.discounted-price {
+    color: black;
+    font-weight: bold;
+}
+
+.btn-add-to-cart {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn-add-to-cart button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+    background-color: #6B635A;
+    transition: 0.5s;
+}
+
+.btn-add-to-cart button:hover {
+    background-color: #6b635a7c;
+}

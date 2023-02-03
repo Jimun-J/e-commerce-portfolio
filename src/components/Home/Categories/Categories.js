@@ -1,22 +1,44 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './Categories.css'
+import Slider from "react-slick";
+import { Link } from 'react-router-dom'
 
-import EastIcon from '@mui/icons-material/East';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Categories = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 2
+  }
+
   return (
     <div className="categories">
-        <div className="categories-title">
-            <div className="categories-text-wrap">Discover our styles.</div>
-            <Link to="/">View More<span class="categories-arrow"><EastIcon /></span></Link>
+      <div className="category-title">Categories</div>
+      <p className="category-subtitle">Shop by Category for All Your Needs</p>
+      <Slider {...settings}>
+        <div>
+          <Link to="/products/women" className="categories-item women">Women</Link>
         </div>
         <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+          <Link to="/products/men" className="categories-item men">Men</Link>
         </div>
+        <div>
+          <Link to="/products/shoes" className="categories-item shoes">Shoes</Link>
+        </div>
+        <div>
+          <Link to="/products/accessories" className="categories-item accessories">Accessories</Link>
+        </div>
+        <div>
+          <Link to="/products/new-arrivals" className="categories-item new-arrivals">New Arrivals</Link>
+        </div>
+        <div>
+          <Link to="/products/sale" className="categories-item sale">Sale</Link>
+        </div>
+      </Slider>
     </div>
   )
 }

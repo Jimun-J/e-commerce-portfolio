@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 
@@ -8,7 +7,6 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Product from './components/Product/Product'
 import ProductList from './components/ProductList/ProductList';
-
 
 const Layout = () => {
   return (
@@ -31,7 +29,7 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/products",
+        path: "/products/:id",
         element: <ProductList />
       },
       {
@@ -42,11 +40,9 @@ const router = createBrowserRouter([
   }
 ])
 
+
+
 function App() {
-  useEffect(() => {
-
-  }, [])
-
   return (
     <div className="App">
       <RouterProvider router={router} />

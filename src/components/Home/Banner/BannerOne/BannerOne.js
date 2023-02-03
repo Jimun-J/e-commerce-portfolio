@@ -22,7 +22,7 @@ const BannerOne = () => {
             Make your style more unique with our wide selection of fashion items! 
             Shop now to find the perfect pieces that will help you stand out.
           </p>
-          <Link to="/products"><button>Shop Now</button></Link>
+          <Link to="/products/all"><button>Shop Now</button></Link>
         </div>
       </div>
       <div className="right">

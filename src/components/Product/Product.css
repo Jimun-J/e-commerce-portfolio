@@ -1,0 +1,11 @@
+.product {
+    max-width: 1660px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    min-height: 580px;
+}
