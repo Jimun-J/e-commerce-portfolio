@@ -48,34 +48,34 @@ export const ShopProvider = ({ children }) => {
     }
 
     const removeItem = async () => {
-        const result = await fetch(process.env.REACT_APP_API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Shopify-Storefront-Access-Token':
-                    process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
-            },
-            body: JSON.stringify({
-                query: `
-                    mutation checkoutLineItemsRemove($checkoutId: ID!, $lineItemIds: [ID!]!) {
-                        checkoutLineItemsRemove(checkoutId: $checkoutId, lineItemIds: $lineItemIds) {
-                            checkout {
-                                id
-                            }
-                            checkoutUserErrors {
-                                message
-                            }
-                        }
-                    }
-            `, variables: {
-                "checkoutId": "gid://shopify/Checkout/d12f8d2e9ebe40abf689b761a4c98b97?key=76163d9247dbc9942d54c00c1ef0c2cc",
-                "lineItemIds": [
-                    "gid://shopify/CheckoutLineItem/444210500078340?checkout=d12f8d2e9ebe40abf689b761a4c98b97"
-                ]
-            }
-        }),
-    })
-    console.log(result);
+    //     const result = await fetch(process.env.REACT_APP_API_URL, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'X-Shopify-Storefront-Access-Token':
+    //                 process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+    //         },
+    //         body: JSON.stringify({
+    //             query: `
+    //                 mutation checkoutLineItemsRemove($checkoutId: ID!, $lineItemIds: [ID!]!) {
+    //                     checkoutLineItemsRemove(checkoutId: $checkoutId, lineItemIds: $lineItemIds) {
+    //                         checkout {
+    //                             id
+    //                         }
+    //                         checkoutUserErrors {
+    //                             message
+    //                         }
+    //                     }
+    //                 }
+    //         `, variables: {
+    //             "checkoutId": "gid://shopify/Checkout/d12f8d2e9ebe40abf689b761a4c98b97?key=76163d9247dbc9942d54c00c1ef0c2cc",
+    //             "lineItemIds": [
+    //                 "gid://shopify/CheckoutLineItem/444210500078340?checkout=d12f8d2e9ebe40abf689b761a4c98b97"
+    //             ]
+    //         }
+    //     }),
+    // })
+    // console.log(result);
 }
 
 return (
