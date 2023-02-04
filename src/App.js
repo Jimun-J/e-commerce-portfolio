@@ -7,6 +7,8 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import Product from './components/Product/Product'
 import ProductList from './components/ProductList/ProductList';
+import ProductListAll from './components/ProductList/ProductListAll';
+import Cart from './components/Cart/Cart';
 
 const Layout = () => {
   return (
@@ -29,12 +31,20 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/products/:id",
+        path: "/products/collection/:id",
         element: <ProductList />
+      },
+      {
+        path: "/products/all",
+        element: <ProductListAll />
       },
       {
         path: "/product/:id",
         element: <Product />
+      },
+      {
+        path: "/cart",
+        element: <Cart />
       }
     ]
   }

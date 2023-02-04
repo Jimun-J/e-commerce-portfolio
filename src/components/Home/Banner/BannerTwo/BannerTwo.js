@@ -16,7 +16,7 @@ const BannerTwo = () => {
                     <p>
                         Shop now to find the perfect pieces that will help you stand out.
                     </p>
-                    <Link to="/products/new-arrivals"><button>Shop Now</button></Link>
+                    <Link to="/products/collection/new-arrivals"><button>Shop Now</button></Link>
                 </div>
             </div>
             <div className="right">

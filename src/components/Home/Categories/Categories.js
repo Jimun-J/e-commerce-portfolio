@@ -21,22 +21,22 @@ const Categories = () => {
       <p className="category-subtitle">Shop by Category for All Your Needs</p>
       <Slider {...settings}>
         <div>
-          <Link to="/products/women" className="categories-item women">Women</Link>
+          <Link to="/products/collection/women" className="categories-item women">Women</Link>
         </div>
         <div>
-          <Link to="/products/men" className="categories-item men">Men</Link>
+          <Link to="/products/collection/men" className="categories-item men">Men</Link>
         </div>
         <div>
-          <Link to="/products/shoes" className="categories-item shoes">Shoes</Link>
+          <Link to="/products/collection/shoes" className="categories-item shoes">Shoes</Link>
         </div>
         <div>
-          <Link to="/products/accessories" className="categories-item accessories">Accessories</Link>
+          <Link to="/products/collection/accessories" className="categories-item accessories">Accessories</Link>
         </div>
         <div>
-          <Link to="/products/new-arrivals" className="categories-item new-arrivals">New Arrivals</Link>
+          <Link to="/products/collection/new-arrivals" className="categories-item new-arrivals">New Arrivals</Link>
         </div>
         <div>
-          <Link to="/products/sale" className="categories-item sale">Sale</Link>
+          <Link to="/products/collection/sale" className="categories-item sale">Sale</Link>
         </div>
       </Slider>
     </div>
