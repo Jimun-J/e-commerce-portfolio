@@ -7,7 +7,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-import { ShopContext } from '../../client/Client';
+import { ShopContext } from '../../ClientCart/ClientCart';
 
 const Navbar = () => {
   const [{ cart }] = useContext(ShopContext);

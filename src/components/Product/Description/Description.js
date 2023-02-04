@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import './Description.css'
 import { Link } from 'react-router-dom'
 
-import { ShopContext } from '../../../client/Client';
+import { ShopContext } from '../../../ClientCart/ClientCart';
 import minus from '../../../assets/icon-minus.svg'
 import plus from '../../../assets/icon-plus.svg'
 

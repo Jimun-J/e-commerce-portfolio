@@ -1,13 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { ShopContext } from '../../client/Client'
+import { ShopContext } from '../../ClientCart/ClientCart'
 import DeleteIcon from '@mui/icons-material/Delete';
 import './Cart.css'
 
 const Cart = () => {
-    const [{ cart }, removeItem] = useContext(ShopContext);
+    const [{ cart }, addItemToCheckout, updateItem, removeItem] = useContext(ShopContext);
     const [items, setItems] = useState([]);
-
-    console.log(cart);
 
     useEffect(() => {
         if (cart && Object.keys(cart).length !== 0) {
@@ -22,23 +20,21 @@ const Cart = () => {
     const increaseQuantity = (id) => {
         const item = items.filter((item) => item.id === id);
         const quantity = item[0].quantity + 1;
+        updateItem(cart.id, id, quantity);
     }
 
     const reduceQuantity = (id) => {
-        console.log(cart.id);
-        console.log(id);
         const item = items.filter((item) => item.id === id);
         const quantity = item[0].quantity - 1;
         if (quantity === 0) {
-            //delete item
+            removeItem();
         } else {
-            console.log(typeof(quantity));
-            // updateItem(cart.id, id, quantity);
+            updateItem(cart.id, id, quantity);
         }   
     }
 
-    const remove = () => {
-        removeItem();
+    const remove = (id) => {
+        removeItem(cart.id, id);
     }
 
     return (
@@ -80,7 +76,7 @@ const Cart = () => {
                                                     <div>{item.quantity}</div>
                                                     <button onClick={() => increaseQuantity(item.id)}>+</button>
                                                 </div>
-                                                <DeleteIcon className="icon-delete" onClick={remove}/>
+                                                <DeleteIcon className="icon-delete" onClick={() => remove(item.id)}/>
                                             </div>
                                             <div style={{ textAlign: 'right' }}>
                                                 ${(Number(item.variant.price.amount) * (item.quantity)).toFixed(2)} CAD
