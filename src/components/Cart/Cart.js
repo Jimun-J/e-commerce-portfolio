@@ -93,7 +93,7 @@ const Cart = () => {
                                 ${cart.totalPrice.amount} CAD
                             </div>  
                             <div className="checkout-container">
-                                <a href={cart.webUrl}><button className="checkout">Check Out</button></a>
+                                <a href={cart.webUrl} target="_blank" rel="noreferrer"><button className="checkout">Check Out</button></a>
                             </div>
                         </div>
                 }
