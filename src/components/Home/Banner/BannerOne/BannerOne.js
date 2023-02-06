@@ -15,6 +15,7 @@ const BannerOne = () => {
   return (
     <div className="banner-one">
       <div className="left">
+        <img src={image1} alt="" className="img-background"/>
         <div className="text-wrap">
           <div>Trending Products in {year}</div>
           <h1>Make Your Style More Unique and Express Your Individuality.</h1>

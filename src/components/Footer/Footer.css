@@ -49,3 +49,25 @@
 .footer-item .item {
     color: grey;
 }
+
+@media screen and (max-width: 1080px) {
+    .footer {
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer .right {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-item {
+        margin-bottom: 32px;
+    }
+}

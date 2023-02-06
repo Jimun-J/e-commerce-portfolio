@@ -83,3 +83,10 @@
 .swiper-button-next:hover {
     background-image: url(../../../assets/svg/icon-arrow-right-w.svg);
 }
+
+@media screen and (max-width: 769px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
+}

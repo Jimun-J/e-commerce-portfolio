@@ -112,3 +112,9 @@
 .minus-container, .plus-container {
     cursor: pointer;
 }
+
+@media screen and (max-width: 724px) {
+    .description-container {
+        padding: 20px 0px;
+    }
+}

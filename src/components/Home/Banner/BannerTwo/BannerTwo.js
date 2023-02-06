@@ -12,6 +12,7 @@ const BannerTwo = () => {
         <div className="banner-two">
             <div className="left">
                 <div className="text-wrap">
+                    <img src={image1} alt="" className="img-background"/>
                     <h2>New Arrivals.</h2>
                     <p>
                         Shop now to find the perfect pieces that will help you stand out.

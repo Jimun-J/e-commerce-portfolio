@@ -16,3 +16,9 @@
     padding: 10px 20px;
     font-size: 14px;
 }
+
+@media screen and (max-width: 420px) {
+    .notification-container {
+        height: 68px;
+    }
+}

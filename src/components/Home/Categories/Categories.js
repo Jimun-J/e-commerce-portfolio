@@ -12,7 +12,16 @@ const Categories = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 2,
-    slidesToScroll: 2
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 430,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   }
 
   return (

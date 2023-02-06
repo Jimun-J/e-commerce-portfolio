@@ -141,3 +141,47 @@
 .icon-delete {
     cursor: pointer;
 }
+
+.mobile-total {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .first-column {
+        display: block;
+    }
+    .cart-item img {
+        width: 80%;
+    }
+
+    .cart-item-description {
+        height: 50%;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .cart-item {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .quantity {
+        display: none;
+    }
+
+    .chart {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .desktop-total {
+        display: none;
+    }
+
+    .mobile-total {
+        display: initial;
+        position: absolute;
+        transform: translateY(30px);
+        right: 22px;
+    }
+}

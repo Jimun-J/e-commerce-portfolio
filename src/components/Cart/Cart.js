@@ -27,10 +27,10 @@ const Cart = () => {
         const item = items.filter((item) => item.id === id);
         const quantity = item[0].quantity - 1;
         if (quantity === 0) {
-            removeItem();
+            removeItem(cart.id, id);
         } else {
             updateItem(cart.id, id, quantity);
-        }   
+        }
     }
 
     const remove = (id) => {
@@ -50,7 +50,7 @@ const Cart = () => {
                             </div>
                             <div className="chart">
                                 <div>PRODUCTS</div>
-                                <div>QUANTITY</div>
+                                <div className="quantity">QUANTITY</div>
                                 <div>TOTAL</div>
                             </div>
                             {
@@ -76,9 +76,12 @@ const Cart = () => {
                                                     <div>{item.quantity}</div>
                                                     <button onClick={() => increaseQuantity(item.id)}>+</button>
                                                 </div>
-                                                <DeleteIcon className="icon-delete" onClick={() => remove(item.id)}/>
+                                                <DeleteIcon className="icon-delete" onClick={() => remove(item.id)} />
+                                                <div style={{ textAlign: 'right' }} className="mobile-total">
+                                                    ${(Number(item.variant.price.amount) * (item.quantity)).toFixed(2)} CAD
+                                                </div>
                                             </div>
-                                            <div style={{ textAlign: 'right' }}>
+                                            <div className="desktop-total" style={{ textAlign: 'right' }}>
                                                 ${(Number(item.variant.price.amount) * (item.quantity)).toFixed(2)} CAD
                                             </div>
                                         </div>
@@ -87,7 +90,7 @@ const Cart = () => {
                             }
                             <div className="total">
                                 ${cart.totalPrice.amount} CAD
-                            </div>  
+                            </div>
                             <div className="checkout-container">
                                 <a href={cart.webUrl} target="_blank" rel="noreferrer"><button className="checkout">Check Out</button></a>
                             </div>

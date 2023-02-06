@@ -64,3 +64,42 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px;
 }
+
+@media screen and (max-width: 870px) {
+    .products-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .products-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 472px) {
+    .sorted-by {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .sorted-by .products-count {
+        text-align: right;
+        margin: 0px 20px;
+    }
+
+    .products-container {
+        gap: 20px;
+    }
+
+    .productList {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+}
