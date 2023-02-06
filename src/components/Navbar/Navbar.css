@@ -177,6 +177,7 @@
     outline: none;
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .menu-icon-container {
@@ -203,12 +204,16 @@
         height: 100vh;
         top: 0;
         left: 0;
+        display: block;
         background-color: white;
-        display: none;
+        transform: translateX(-100%);
     }
 
     .main-navigation.active {
-        display: block;
+        opacity: 1;
+		visibility: visible;
+		transform: translateX(0%);
+		transition: 0.3s;
     }
 
     .tab {

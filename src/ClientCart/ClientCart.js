@@ -23,13 +23,11 @@ export const ShopProvider = ({ children }) => {
         const checkout = await client.checkout.create();
         localStorage.setItem('checkout', checkout.id);
         setCart(checkout);
-        console.log('created');
     }
 
     const fetchCart = async (checkoutId) => {
         const checkout = await client.checkout.fetch(checkoutId);
         setCart(checkout);
-        console.log('fetched');
     };
 
 
@@ -57,7 +55,7 @@ export const ShopProvider = ({ children }) => {
     }
 
     return (
-    <ShopContext.Provider value={[{ cart }, addItemToCheckout, updateItem, removeItem ]}>
+        <ShopContext.Provider value={[{ cart }, addItemToCheckout, updateItem, removeItem ]}>
             {children}
         </ShopContext.Provider>
     )

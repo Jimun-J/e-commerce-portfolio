@@ -6,12 +6,16 @@ import { ShopContext } from '../../../ClientCart/ClientCart';
 import minus from '../../../assets/icon-minus.svg'
 import plus from '../../../assets/icon-plus.svg'
 
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
 const Description = ({ product }) => {
   const [count, setCount] = useState(0);
   const [colorArray, setColorArray] = useState([]);
   const [sizeArray, setSizeArray] = useState([]);
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
+  const [open, setOpen] = useState(false);
 
   const [{}, addItemToCheckout] = useContext(ShopContext);
 
@@ -25,10 +29,11 @@ const Description = ({ product }) => {
     setCount(count + 1);
   }
 
-  const addItem = () => {
+  const addItem = async () => {
     let variantId = findVariantId();
-    console.log(variantId);
-    addItemToCheckout(variantId, count);
+    await addItemToCheckout(variantId, count);
+    setOpen(true);
+    setCount(0);
   }
 
   const findVariantId = () => {
@@ -77,6 +82,18 @@ const Description = ({ product }) => {
     e.target.classList.add('active');
     setSelectedSize(e.target.innerText);
   }
+
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   if (product && Object.keys(product).length === 0) {
     return <div>loading...</div>
@@ -159,6 +176,11 @@ const Description = ({ product }) => {
           </div>
         </div>
       </div>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Item Successfully Added!
+        </Alert>
+      </Snackbar>
     </div>
   )
 }

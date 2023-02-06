@@ -32,6 +32,15 @@
     color: grey;
 }
 
+.categories-title a:hover {
+    transform: translate(-25%);
+}
+
+.categories-title a:hover span {
+    opacity: 1;
+    transform: translate(50%, 5px);
+}
+
 .products-item {
     margin: 10px;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
@@ -39,7 +48,7 @@
 }
 
 .products-item:hover {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
 
 @media screen and (max-width: 520px) {
@@ -63,5 +72,14 @@
         transition: all .3s ease;
         margin-top: 12px;
         font-size: 22px;
+    }
+
+    .categories-title a:hover {
+        transform: translate(1%);
+    }
+    
+    .categories-title a:hover span {
+        opacity: 1;
+        transform: translate(15%, 5px);
     }
 }
